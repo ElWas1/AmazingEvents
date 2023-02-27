@@ -1,0 +1,198 @@
+/* ------------------------------------------------------------------
+   ------------------Ajustes globales del proyecto-------------------
+   ------------------------------------------------------------------ */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li.nav-item>a {
+    color: rgb(0, 107, 111) !important;
+    width: fit-content;
+    padding: .5rem;
+    margin: .5rem 1rem;
+    font-weight: bolder;
+    background-color: rgba(137, 43, 226, 0.438);
+    border-radius: 1rem;
+    transition-duration: 0.4s !important;
+}
+
+li.nav-item>a:hover {
+    background-color: rgb(46, 0, 86) !important;
+    color: rgb(135, 0, 145) !important;
+}
+
+li.nav-item>a[href="#"] {
+    margin-top: .5rem;
+    color: blueviolet !important;
+    font-weight: bolder;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.293);
+    background-color: rgba(0, 0, 0, 0.226);
+    border-radius: 1rem;
+}
+
+nav#navbar-general {
+    padding: 0;
+}
+
+button#toggler-navbar {
+    color: purple;
+    background: rgba(255, 255, 255, 0.659);
+}
+
+/* ------------------------------------------------------------------
+   ----------------------------home.html-----------------------------
+   ------------------------------------------------------------------ */
+
+img#logo-amazing-events {
+    width: 15rem;
+    height: 4rem;
+}
+
+div#navbar-background {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(233, 63, 221, 1) 100%, rgba(0, 212, 255, 1) 100%);
+}
+
+@media only screen and (max-width: 374px) {
+    img#logo-amazing-events {
+        width: 14rem;
+        height: 4rem;
+    }
+}
+
+main#main-home {
+    background-color: grey;
+    min-height: fit-content;
+}
+
+div.card {
+    margin-top: rem !important;
+}
+
+div#category-form {
+    padding: 5rem;
+}
+
+div#category-form>form>fieldset>label {
+    margin-left: 2rem;
+}
+
+form[role="search"]>input {
+    font-weight: 100;
+}
+
+button#button-search {
+    background-color: blueviolet;
+    border: 2px solid black;
+    color: white;
+}
+
+footer {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(270deg, rgba(2, 0, 36, 1) 0%, rgba(233, 63, 221, 1) 100%, rgba(0, 212, 255, 1) 100%);
+}
+
+footer>div#icons {
+    width: fit-content;
+    margin-left: 10rem;
+}
+
+footer>div#icons>svg {
+    margin: 1rem 1rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+footer>div#cohort {
+    color: white;
+    font-weight: bolder;
+    margin: 1rem 0;
+    width: fit-content;
+    margin-right: 10rem;
+    background-color: rgba(86, 0, 161, 0.202);
+    padding: .5rem;
+    border-radius: 1rem;
+    transition-duration: 0.4s;
+}
+
+footer>div#cohort:hover {
+    background-color: rgba(233, 63, 221, 1);
+    color: black;
+}
+
+/* ------------------------------------------------------------------
+   -----------------------upcoming_events.html-----------------------
+   ------------------------------------------------------------------ */
+
+
+
+/* ------------------------------------------------------------------
+   --------------------------past_events.html------------------------
+   ------------------------------------------------------------------ */
+
+
+
+/* ------------------------------------------------------------------
+   ----------------------------stats.html----------------------------
+   ------------------------------------------------------------------ */
+
+div#div-table>h1 {
+    padding-top: 6rem;
+    text-align: center;
+}
+
+table#table-stats {
+    margin: 2rem 6rem;
+}
+
+table#table-stats th {
+    padding: .5rem;
+}
+
+table#table-stats tr,
+table#table-stats td {
+    outline: 1px solid black;
+    padding: .5rem;
+}
+
+/* ------------------------------------------------------------------
+   ----------------------------contact.html--------------------------
+   ------------------------------------------------------------------ */
+
+div#contact-us-form {
+    padding: 16rem;
+}
+
+div#contact-us-form>h1 {
+    margin-bottom: .5rem;
+}
+
+div#contact-us-form input {
+    width: 100%;
+}
+
+div#contact-us-form input#message {
+    min-height: 10rem;
+}
+
+div#contact-us-form input#submit {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    color: black;
+    transition-duration: 0.4s;
+    border: 2px solid black;
+}
+
+div#contact-us-form input#submit:hover {
+    background-color: green;
+    color: white;
+}
+
+/* ------------------------------------------------------------------
+   ----------------------------details.html--------------------------
+   ------------------------------------------------------------------ */
