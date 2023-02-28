@@ -48,6 +48,27 @@
     </header>
 
     <main class="" id="main-home">
+        <div id="carouselExampleCaptions" class="carrusel carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h1>Upcoming Events</h1>
+                    <p>Take a look at the upcoming events.</p>
+                </div>
+            </div>
+            <form action="./home.html">
+                <button class="carousel-control-prev" type="submit" data-bs-slide="prev" href="./stats.html">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <a class="text-carousel-buttons" href="./home.html">Go to Home</a>
+                </button>
+            </form>
+            <form action="./past_events.html">
+                <button class="carousel-control-next" type="submit" data-bs-slide="next" href="./upcoming_events.html">
+                    <a class="text-carousel-buttons" href="./past_events.html">Go to Past Events</a>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </form>
+        </div>
+
         <div class="d-flex justify-content-center align-content-center flex-wrap" id="category-form">
             <form action="" method="">
                 <fieldset>
@@ -64,9 +85,10 @@
             </form>
 
             <form class="" role="search">
-                <input class="form-control me-5" type="search" placeholder="Search for an upcoming event..." aria-label="Search">
+                <input class="form-control me-5" type="search" placeholder="Search for an upcoming event..."
+                    aria-label="Search">
                 <button id="button-search" class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+            </form>
         </div>
         <div class="d-flex justify-content-center align-items-center flex-wrap">
             <div class="card m-4 mt-5" style="width: 18rem;">

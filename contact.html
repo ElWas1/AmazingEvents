@@ -49,6 +49,26 @@
     </header>
 
     <main id="main-home">
+        <div id="carouselExampleCaptions" class="carrusel carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h1>Contact</h1>
+                    <p>Send us your feedback by completing the form below.</p>
+                </div>
+            </div>
+            <form action="./past_events.html">
+                <button class="carousel-control-prev" type="submit" data-bs-slide="prev" href="./stats.html">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <a class="text-carousel-buttons" href="./past_events.html">Go to Past Events</a>
+                </button>
+            </form>
+            <form action="./upcoming_events.html">
+                <button class="carousel-control-next" type="submit" data-bs-slide="next" href="./upcoming_events.html">
+                    <a class="text-carousel-buttons" href="./stats.html">Go to Stats</a>
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </form>
+        </div>
         <div class="d-flex justify-content-center align-content-center flex-wrap flex-column" id="contact-us-form">
             <h1>Contact us:</h1>
             <form action="" method="">
@@ -56,11 +76,11 @@
                     <label for="name">Name:</label>
                     <input type="text" name="name" id="name">
                 </fieldset>
-                <fieldset> 
+                <fieldset>
                     <label for="email">Email:</label>
                     <input type="text" name="email" id="email">
                 </fieldset>
-                <fieldset> 
+                <fieldset>
                     <label id="message-label" for="message">Message:</label>
                     <input type="text" name="message" id="message">
                 </fieldset>
