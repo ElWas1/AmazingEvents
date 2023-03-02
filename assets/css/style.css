@@ -66,7 +66,7 @@ div#navbar-background {
 main#main-home {
     background: rgb(0,119,143);
     background: linear-gradient(180deg, rgba(0,119,143,1) 0%, rgba(0,119,143,1) 75%, rgba(0,0,0,1) 100%);
-    min-height: fit-content;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -79,7 +79,7 @@ main#main-home {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.carrusel a.text-carousel-buttons {
+.carrusel .text-carousel-buttons {
     text-decoration: none;
     color: #fff;
 }
@@ -115,6 +115,28 @@ button#button-search {
 
 div.card {
     width: 18rem;
+    min-height: 50vh;
+}
+
+div.card>img.card-img-top {
+    height: 17vh;
+}
+
+div.card-body {
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+div.card>div.card-body>a.btn {
+    justify-self: flex-end;
+}
+
+div.card>div.card-body>.card-title {
+    margin: 1rem 0;
+}
+
+div.card>div.card-body>.card-text {
+    margin: 1rem 0;
 }
 
 footer {
@@ -165,17 +187,13 @@ footer>div#cohort:hover {
         max-height: fit-content;
     }
 
-    .carrusel a.text-carousel-buttons {
-        font-size: .5rem;
-    }
-
-    .carrusel h1 {
-
+    .carrusel .text-carousel-buttons {
+        display: none;
     }
 
     .carrusel p {
         text-align: center;
-        font-size: .9rem;
+        font-size: 1.1rem;
         margin-left: 4.2rem;
         width: 60%;
     }
