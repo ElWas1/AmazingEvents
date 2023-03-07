@@ -75,16 +75,22 @@
             <h1>Contact us:</h1>
             <form>
                 <fieldset>
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" id="name">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
                 </fieldset>
                 <fieldset>
-                    <label for="email">Email:</label>
-                    <input type="text" name="email" id="email">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
                 </fieldset>
                 <fieldset>
-                    <label id="message-label" for="message">Message:</label>
-                    <input type="text" name="message" id="message">
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message:</label>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
                 </fieldset>
                 <input id="submit" type="submit" value="Submit">
             </form>
@@ -116,10 +122,12 @@
         </div>
     </footer>
 
-    <script src="./assets/js/main.js"></script>
+    <script src="./scripts/data.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/contact.js"></script>
 </body>
 
 </html>
