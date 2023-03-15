@@ -1,4 +1,5 @@
 const cardElements = document.getElementById("cards-container");
+
 let cards = '';
 
 for (let i = 0; i < data.events.length; i++) {
