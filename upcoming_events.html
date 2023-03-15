@@ -28,7 +28,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" href="./home.html">Home</a>
+                            <a class="nav-link active" href="./index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#">Upcoming Events</a>
@@ -56,7 +56,7 @@
                     <p>Take a look at the upcoming events.</p>
                 </div>
             </div>
-            <form action="./home.html">
+            <form action="./index.html">
                 <button class="carousel-control-prev" type="submit" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="text-carousel-buttons">Go to Home</span>
@@ -70,25 +70,15 @@
             </form>
         </div>
 
-        <div class="d-flex justify-content-center align-content-center flex-wrap" id="category-form">
-            <form>
-                <fieldset>
-                    <legend>Filter by category:</legend>
-                    <label for="category1">Sports</label>
-                    <input type="checkbox" name="sports" id="category1">
-                    <label for="category2">Entertainment</label>
-                    <input type="checkbox" name="entertainment" id="category2">
-                    <label for="category3">Tours</label>
-                    <input type="checkbox" name="tours" id="category3">
-                    <label for="category4">Gastronomy</label>
-                    <input type="checkbox" name="gastronomy" id="category4">
-                </fieldset>
-            </form>
+        <div class="d-inline-flex justify-content-center flex-wrap" id="categories-and-search-container">
+            <div id="title-category-form">
+                <h2>Filter by categories:</h2>
+            </div>
+            <div class="form-check" id="category-form"></div>
 
             <form role="search">
-                <input class="form-control me-5" type="search" placeholder="Search for an upcoming event..."
-                    aria-label="Search">
-                <button id="button-search" class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Search for an event..." aria-label="Search"
+                    id="input-search">
             </form>
         </div>
         <div class="d-flex justify-content-center align-items-center flex-wrap" id="cards-container"></div>

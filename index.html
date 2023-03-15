@@ -70,24 +70,13 @@
             </form>
         </div>
 
-        <div class="d-flex justify-content-center align-content-center flex-wrap" id="category-form">
-            <form>
-                <fieldset>
-                    <legend>Filter by category:</legend>
-                    <label for="category1">Sports</label>
-                    <input type="checkbox" name="sports" id="category1">
-                    <label for="category2">Entertainment</label>
-                    <input type="checkbox" name="entertainment" id="category2">
-                    <label for="category3">Tours</label>
-                    <input type="checkbox" name="tours" id="category3">
-                    <label for="category4">Gastronomy</label>
-                    <input type="checkbox" name="gastronomy" id="category4">
-                </fieldset>
-            </form>
+        <div class="d-inline-flex justify-content-center flex-wrap" id="categories-and-search-container">
+            <h2 id="title-category-form">Filter by categories:</h2>
+            <div class="form-check" id="category-form"></div>
 
             <form role="search">
-                <input class="form-control me-2" type="search" placeholder="Search for an event..." aria-label="Search">
-                <button id="button-search" class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Search for an event..." aria-label="Search"
+                    id="input-search">
             </form>
         </div>
         <div class="d-flex justify-content-center align-items-center flex-wrap" id="cards-container"></div>
