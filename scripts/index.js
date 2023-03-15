@@ -31,7 +31,7 @@ function createCategoriesCheckboxes(array) {
 
 function printCards(array) {
     if (array.length == 0) {
-        cardElements.innerHTML = `<h2 id="text-no-matches">There are no matches with your search.</h2>`
+        cardElements.innerHTML += `<h2 id="text-no-matches">There are no matches with your search.</h2>`
         return
     }
     let cards = '';
