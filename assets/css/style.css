@@ -9,19 +9,19 @@
 }
 
 li.nav-item>a {
-    color: rgb(0, 107, 111) !important;
+    color: white !important;
     width: fit-content;
     padding: .5rem;
     margin: .5rem 1rem;
     font-weight: bolder;
-    background-color: rgba(137, 43, 226, 0.438);
+    background-color: rgb(145, 0, 170);
     border-radius: 1rem;
     transition-duration: 0.4s !important;
 }
 
 li.nav-item>a:hover {
-    background-color: rgb(46, 0, 86) !important;
-    color: rgb(135, 0, 145) !important;
+    background-color: rgba(46, 0, 87, 0.609) !important;
+    color: rgb(238, 0, 255) !important;
 }
 
 li.nav-item>a[href="#"] {
@@ -43,7 +43,7 @@ button#toggler-navbar {
 }
 
 /* ------------------------------------------------------------------
-   ----------------------------home.html-----------------------------
+   ----------------------------index.html----------------------------
    ------------------------------------------------------------------ */
 
 img#logo-amazing-events {
@@ -66,7 +66,7 @@ div#navbar-background {
 main#main-home {
     background: rgb(0, 119, 143);
     background: linear-gradient(180deg, rgba(0, 119, 143, 1) 0%, rgba(0, 119, 143, 1) 75%, rgba(0, 0, 0, 1) 100%);
-    min-height: 85vh;
+    min-height: fit-content;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -95,28 +95,29 @@ main#main-home {
     color: white;
 }
 
-div#category-form {
-    padding: 5rem;
+div#categories-and-search-container {
+    padding-top: 5rem;
 }
 
-div#category-form>form>fieldset>label {
+div#category-form {
+    padding: .5rem 0 4rem 0;
+}
+
+div#category-form>label {
     margin-left: 2rem;
 }
 
 form[role="search"]>input {
     font-weight: 100;
-}
-
-button#button-search {
-    margin-top: .5rem;
-    background-color: blueviolet;
-    border: 2px solid black;
-    color: white;
+    margin-left: 3rem;
 }
 
 div.card {
     width: 18rem;
     min-height: 53vh;
+    color: white;
+    background: rgb(0,32,143);
+    background: linear-gradient(0deg, rgba(0,32,143,1) 0%, rgba(89,0,143,1) 80%);
 }
 
 div.card>img.card-img-top {
@@ -138,6 +139,11 @@ div.card>div.card-body>.card-title {
 
 div.card>div.card-body>.card-text {
     margin: 1rem 0;
+}
+
+h2#text-no-matches {
+    color: white;
+    margin-bottom: 2rem;
 }
 
 footer {
@@ -203,24 +209,25 @@ footer>div#cohort:hover {
         justify-self: center;
         width: 15rem;
         font-size: .96rem;
+        margin-left: 2rem;
     }
 }
 
 /* ------------------------------------------------------------------
-   -----------------------upcoming_events.html-----------------------
-   ------------------------------------------------------------------ */
+-----------------------upcoming_events.html-----------------------
+------------------------------------------------------------------ */
 
 
 
 /* ------------------------------------------------------------------
-   --------------------------past_events.html------------------------
-   ------------------------------------------------------------------ */
+--------------------------past_events.html------------------------
+------------------------------------------------------------------ */
 
 
 
 /* ------------------------------------------------------------------
-   ----------------------------stats.html----------------------------
-   ------------------------------------------------------------------ */
+----------------------------stats.html----------------------------
+------------------------------------------------------------------ */
 
 div#div-table>h1 {
     padding-top: 6rem;
@@ -242,16 +249,25 @@ table#table-stats td {
     padding: .5rem;
 }
 
-/* ------------------------------------------------------------------
-   ----------------------------contact.html--------------------------
-   ------------------------------------------------------------------ */
+/* ----------------------------------------------------------------
+----------------------------contact.html--------------------------
+------------------------------------------------------------------ */
 
 div#contact-us-form {
-    padding: 5rem;
+    width: 50vw;
+    margin: 3rem;
+    padding: 3rem;
+    background-color: rgba(128, 128, 128, 0.653);
+    border-radius: 2rem;
 }
 
 div#contact-us-form>h1 {
+    width: 100%;
     margin-bottom: 2rem;
+}
+
+div#contact-us-form label {
+    color: rgba(255, 255, 255, 0.724);
 }
 
 div#contact-us-form input {
@@ -274,14 +290,26 @@ div#contact-us-form input#submit:hover {
 }
 
 /* ------------------------------------------------------------------
-   ----------------------------details.html--------------------------
-   ------------------------------------------------------------------ */
+----------------------------details.html--------------------------
+------------------------------------------------------------------ */
 
 div#container-details {
     padding-top: 2rem !important;
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+}
+
+div#card-details {
+    width: 100%;
+}
+
+div#card-details>img#card-img-top-details {
+    min-height: 25vh;
+}
+
+div.card-body>p.card-text-details {
+    font-size: larger;
 }
 
 div.item-details {

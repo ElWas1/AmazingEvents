@@ -1,43 +1,19 @@
 const cardElements = document.getElementById("cards-container");
-const input = document.getElementById('input-search');
+const input = document.getElementById("input-search");
 const checkboxes = document.getElementById('category-form');
-const currentDate = Date.parse(data.currentDate);
 
-input.addEventListener('input', generalFilterUpcoming);
+input.addEventListener('input', generalFilter);
 
-checkboxes.addEventListener('change', generalFilterUpcoming);
+checkboxes.addEventListener('change', generalFilter);
 
-function generalFilterUpcoming() {
+function generalFilter() {
     let filteredByText = textFilter(data.events, input.value);
     let filteredByCategory = categoriesFilter(filteredByText);
-    printCardsUpcoming(filteredByCategory);
+    printCards(filteredByCategory)
 };
 
-printCardsUpcoming(data.events);
+printCards(data.events);
 createCategoriesCheckboxes(data.events);
-
-function printCardsUpcoming(array) {
-    let cards = '';
-    if (array.length == 0) {
-        cardElements.innerHTML = `<h2 id="text-no-matches">There are no matches with your search.</h2>`
-        return
-    }
-    array.forEach(element => {
-        if (Date.parse(element.date) > currentDate) {
-            cards += `<div class="card m-4">
-            <img src="${element.image}" class="card-img-top" alt="${element.name}">
-            <div class="card-body d-flex">
-            <h5 class="card-title">${element.name}</h5>
-            <p class="card-text">${element.description}</p>
-            <p>Date: ${element.date}<p>
-            <p>Price: $${element.price}</p>
-            <a href="./details.html?id=${element._id}" class="btn btn-primary">More info</a>
-            </div>
-            </div>`
-        }
-    });
-    cardElements.innerHTML = cards;
-};
 
 function createCategoriesCheckboxes(array) {
     let categoriesArray = array.map(element => element.category);
@@ -51,6 +27,27 @@ function createCategoriesCheckboxes(array) {
         }
     });
     checkboxes.innerHTML = printedCheckboxes;
+};
+
+function printCards(array) {
+    if (array.length == 0) {
+        cardElements.innerHTML += `<h2 id="text-no-matches">There are no matches with your search.</h2>`
+        return
+    }
+    let cards = '';
+    array.forEach(element => {
+        cards += `<div class="card m-4">
+        <img src="${element.image}" class="card-img-top" alt="${element.name}">
+        <div class="card-body d-flex">
+        <h5 class="card-title">${element.name}</h5>
+        <p class="card-text">${element.description}</p>
+        <p>Date: ${element.date}<p>
+        <p>Price: $${element.price}</p>
+        <a href="./details.html?id=${element._id}" class="btn btn-primary">More info</a>
+        </div>
+        </div>`
+    });
+    cardElements.innerHTML = cards;
 };
 
 function textFilter(array, text) {
@@ -69,3 +66,4 @@ function categoriesFilter(array) {
     }
     return array
 }
+
