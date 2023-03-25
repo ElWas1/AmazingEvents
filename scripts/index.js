@@ -6,32 +6,25 @@ input.addEventListener('input', generalFilter);
 
 checkboxes.addEventListener('change', generalFilter);
 
-function generalFilter() {
-    let filteredByText = textFilter(data.events, input.value);
-    let filteredByCategory = categoriesFilter(filteredByText);
-    printCards(filteredByCategory)
-};
-
-printCards(data.events);
-createCategoriesCheckboxes(data.events);
+function removeDuplicates(array) {
+    return array.filter((item,
+        index) => array.indexOf(item) === index);
+}
 
 function createCategoriesCheckboxes(array) {
-    let categoriesArray = array.map(element => element.category);
-    const duplicatesFilter = categoriesArray => categoriesArray.filter((element, index) => categoriesArray.indexOf(element) != index);
-    const filteredArray = duplicatesFilter(categoriesArray)
+    const categoriesArray = array.map(element => element.category);
+    const duplicatesFilter = removeDuplicates(categoriesArray)
     let printedCheckboxes = '';
-    filteredArray.forEach(element => {
-        if (filteredArray) {
-            printedCheckboxes += `<label for="${element}">${element}</label>
+    duplicatesFilter.forEach(element => {
+        printedCheckboxes += `<label for="${element}">${element}</label>
             <input type="checkbox" value="${element}" name="${element}" id="${element}">`
-        }
     });
     checkboxes.innerHTML = printedCheckboxes;
 };
 
 function printCards(array) {
     if (array.length == 0) {
-        cardElements.innerHTML += `<h2 id="text-no-matches">There are no matches with your search.</h2>`
+        cardElements.innerHTML = `<h2 id="text-no-matches">There are no matches with your search.</h2>`
         return
     }
     let cards = '';
@@ -67,3 +60,40 @@ function categoriesFilter(array) {
     return array
 }
 
+let eventsArray
+let currentDate
+
+async function obtainData() {
+    try {
+        data = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
+            .then(data => data.json())
+            .then(data => {
+                return data
+            })
+    }
+
+    catch (error) {
+        data = await fetch('./scripts/amazing.json')
+            .then(data => data.json())
+            .then(data => {
+                return data
+            })
+    }
+    eventsArray = data.events
+    currentDate = Date.parse(data.currentDate)
+    return data
+}
+
+async function init() {
+    await obtainData()
+    createCategoriesCheckboxes(eventsArray)
+    printCards(eventsArray)
+}
+
+init()
+
+function generalFilter() {
+    let filteredByText = textFilter(eventsArray, input.value);
+    let filteredByCategory = categoriesFilter(filteredByText);
+    printCards(filteredByCategory)
+};
