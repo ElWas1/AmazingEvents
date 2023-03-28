@@ -70,7 +70,7 @@ div#navbar-background {
 main#main-home {
     background: rgb(0, 119, 143);
     background: linear-gradient(180deg, rgba(0, 119, 143, 1) 0%, rgba(0, 119, 143, 1) 75%, rgba(0, 0, 0, 1) 100%);
-    min-height: 85vh;
+    min-height: 88vh;
     display: flex;
     flex-direction: column;
     justify-items: center;
