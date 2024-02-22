@@ -61,12 +61,16 @@ div#navbar-background {
         width: 14rem;
         height: 4rem;
     }
+
+    div#cards-container {
+        width: 100%;
+    }
 }
 
 main#main-home {
     background: rgb(0, 119, 143);
     background: linear-gradient(180deg, rgba(0, 119, 143, 1) 0%, rgba(0, 119, 143, 1) 75%, rgba(0, 0, 0, 1) 100%);
-    min-height: fit-content;
+    min-height: 88vh;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -179,53 +183,20 @@ footer>div#cohort:hover {
     color: black;
 }
 
-@media only screen and (max-width: 651px) {
-    footer>div#cohort {
-        height: fit-content;
-        width: fit-content;
-        margin: 9% 2rem 0 0;
-    }
 
-    footer>div#icons {
-        margin: 3rem;
-    }
-
-    .carrusel {
-        max-height: fit-content;
-    }
-
-    .carrusel .text-carousel-buttons {
-        display: none;
-    }
-
-    .carrusel p {
-        text-align: center;
-        font-size: 1.1rem;
-        margin-left: 4.2rem;
-        width: 60%;
-    }
-
-    form[role="search"]>input {
-        justify-self: center;
-        width: 15rem;
-        font-size: .96rem;
-        margin-left: 2rem;
-    }
-}
-
-/* ------------------------------------------------------------------
+/* ---------------------------------------------------------------
 -----------------------upcoming_events.html-----------------------
 ------------------------------------------------------------------ */
 
 
 
-/* ------------------------------------------------------------------
+/* ---------------------------------------------------------------
 --------------------------past_events.html------------------------
 ------------------------------------------------------------------ */
 
 
 
-/* ------------------------------------------------------------------
+/* ---------------------------------------------------------------
 ----------------------------stats.html----------------------------
 ------------------------------------------------------------------ */
 
@@ -236,20 +207,23 @@ div#div-table>h1 {
 
 table#table-stats {
     margin: 2rem 6rem;
-    background-color: rgb(222, 222, 222);
+    background: rgb(17,0,112);
+    background: linear-gradient(270deg, rgba(17,0,112,1) 0%, rgba(157,0,255,1) 100%);
+    color: white;
 }
 
 table#table-stats th {
     padding: .5rem;
+    font-weight: bolder;
 }
 
 table#table-stats tr,
 table#table-stats td {
-    outline: 1px solid black;
+    outline: 1px solid violet;
     padding: .5rem;
 }
 
-/* ----------------------------------------------------------------
+/* ---------------------------------------------------------------
 ----------------------------contact.html--------------------------
 ------------------------------------------------------------------ */
 
@@ -289,7 +263,7 @@ div#contact-us-form input#submit:hover {
     color: white;
 }
 
-/* ------------------------------------------------------------------
+/* ---------------------------------------------------------------
 ----------------------------details.html--------------------------
 ------------------------------------------------------------------ */
 
@@ -332,5 +306,61 @@ div#image-details>img {
 }
 
 div#text-details {
-    padding: 1.5rem
+    padding: 1
+    .5rem
+}
+
+/* ---------------------------------------------------------------
+-------------------------------@media-----------------------------
+------------------------------------------------------------------ */
+
+@media only screen and (max-width: 651px) {
+    footer>div#cohort {
+        height: fit-content;
+        width: fit-content;
+        margin: 9% 2rem 0 0;
+    }
+
+    footer>div#icons {
+        margin: 3rem;
+    }
+
+    .carrusel {
+        max-height: fit-content;
+    }
+
+    .carrusel .text-carousel-buttons {
+        display: none;
+    }
+
+    .carrusel p {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-left: 4.2rem;
+        width: 60%;
+    }
+
+    form[role="search"]>input {
+        justify-self: center;
+        width: 15rem;
+        font-size: .96rem;
+        margin-left: 2rem;
+    }
+
+    div#cards-container {
+        width: 100%;
+    }
+
+    div#div-table {
+        width: 100%;
+    }
+
+    table#table-stats {
+        margin: 2rem 0 0 0;
+    }
+
+    div#contact-us-form {
+        margin: 1rem 0;
+        width: 90%;
+    }
 }

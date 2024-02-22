@@ -1,7 +1,6 @@
 const cardElements = document.getElementById("cards-container");
 const input = document.getElementById('input-search');
 const checkboxes = document.getElementById('category-form');
-const currentDate = Date.parse(data.currentDate);
 
 input.addEventListener('input', generalFilterPast);
 
@@ -12,9 +11,6 @@ function generalFilterPast() {
     let filteredByCategory = categoriesFilter(filteredByText);
     printCardsPast(filteredByCategory);
 }
-
-printCardsPast(data.events);
-createCategoriesCheckboxes(data.events);
 
 function printCardsPast(array) {
     let cards = ''
@@ -39,16 +35,18 @@ function printCardsPast(array) {
     cardElements.innerHTML = cards;
 }
 
+function removeDuplicates(array) {
+    return array.filter((item,
+        index) => array.indexOf(item) === index);
+}
+
 function createCategoriesCheckboxes(array) {
-    let categoriesArray = array.map(element => element.category);
-    const duplicatesFilter = categoriesArray => categoriesArray.filter((element, index) => categoriesArray.indexOf(element) != index);
-    const filteredArray = duplicatesFilter(categoriesArray)
+    const categoriesArray = array.map(element => element.category);
+    const duplicatesFilter = removeDuplicates(categoriesArray)
     let printedCheckboxes = '';
-    filteredArray.forEach(element => {
-        if (filteredArray) {
+    duplicatesFilter.forEach(element => {
             printedCheckboxes += `<label for="${element}">${element}</label>
             <input type="checkbox" value="${element}" name="${element}" id="${element}">`
-        }
     });
     checkboxes.innerHTML = printedCheckboxes;
 };
@@ -69,3 +67,41 @@ function categoriesFilter(array) {
     }
     return array
 }
+
+let eventsArray
+let currentDate
+
+async function obtainData() {
+    try {
+        data = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
+            .then(data => data.json())
+            .then(data => {
+                return data
+            })
+    }
+
+    catch (error) {
+        data = await fetch('./scripts/amazing.json')
+            .then(data => data.json())
+            .then(data => {
+                return data
+            })
+    }
+    eventsArray = data.events
+    currentDate = Date.parse(data.currentDate)
+    return data
+}
+
+async function init() {
+    await obtainData()
+    createCategoriesCheckboxes(eventsArray)
+    printCardsPast(eventsArray)
+}
+
+init()
+
+function generalFilterPast() {
+    let filteredByText = textFilter(eventsArray, input.value);
+    let filteredByCategory = categoriesFilter(filteredByText);
+    printCardsPast(filteredByCategory)
+};
