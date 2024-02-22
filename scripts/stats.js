@@ -162,7 +162,7 @@ function pastEventsStats(array) {
 
 async function obtainData() {
     try {
-        data = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
+        data = await fetch('./scripts/amazing.json')
             .then(data => data.json())
             .then(data => {
                 return data
@@ -170,11 +170,7 @@ async function obtainData() {
     }
 
     catch (error) {
-        data = await fetch('./scripts/amazing.json')
-            .then(data => data.json())
-            .then(data => {
-                return data
-            })
+        console.error(error);
     }
     eventsArray = data.events
     currentDate = Date.parse(data.currentDate)

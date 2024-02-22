@@ -7,19 +7,15 @@ let evento
 
 async function obtainData() {
   try {
-      data = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
-          .then(data => data.json())
-          .then(data => {
-              return data
-          })
+    data = await fetch('./scripts/amazing.json')
+      .then(data => data.json())
+      .then(data => {
+        return data
+      })
   }
 
   catch (error) {
-      data = await fetch('./scripts/amazing.json')
-          .then(data => data.json())
-          .then(data => {
-              return data
-          })
+    console.error(error);
   }
   eventsArray = data.events
   currentDate = Date.parse(data.currentDate)

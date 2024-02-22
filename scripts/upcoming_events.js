@@ -39,7 +39,7 @@ function createCategoriesCheckboxes(array) {
     const duplicatesFilter = removeDuplicates(categoriesArray)
     let printedCheckboxes = '';
     duplicatesFilter.forEach(element => {
-            printedCheckboxes += `<label for="${element}">${element}</label>
+        printedCheckboxes += `<label for="${element}">${element}</label>
             <input type="checkbox" value="${element}" name="${element}" id="${element}">`
     });
     checkboxes.innerHTML = printedCheckboxes;
@@ -73,7 +73,7 @@ let currentDate
 
 async function obtainData() {
     try {
-        data = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
+        data = await fetch('./scripts/amazing.json')
             .then(data => data.json())
             .then(data => {
                 return data
@@ -81,11 +81,7 @@ async function obtainData() {
     }
 
     catch (error) {
-        data = await fetch('./scripts/amazing.json')
-            .then(data => data.json())
-            .then(data => {
-                return data
-            })
+        console.error(error);
     }
     eventsArray = data.events
     currentDate = Date.parse(data.currentDate)
